@@ -33,8 +33,24 @@ class Hotel:
     
     def consultar_habitaciones_ocupadas(self):
         return [habitacion for habitacion in range(1,self.num_habitaciones + 1) if habitacion not in self.habitaciones_disponibles]
-    
+
+#Registro de personas
 hotel = Hotel(5)
 hotel.registrar_llegada("123","Pedro",2)
 hotel.registrar_llegada("321","Carlos",4)
+hotel.registrar_llegada("321","Luis",3)
+#Muestra las habitaciones ocupada y disponibles como también los huéspedes
+print("Habitaciones Disponibles:\n", hotel.consultar_habitaciones_disponibles())
+print("Habitaciones Ocupadas:\n", hotel.consultar_habitaciones_ocupadas())
+print("Consultar Huésped por Cédula:\n", hotel.consultar_huesped_por_cedula("123"))
+print("Consultar Huéspedes por Orden de Llegada:\n", hotel.consultar_huespedes_por_orden_de_llegada())
 
+#Formas y maneras de usar las demás funciones del programa solicitado
+""" Para registrar la salida de un huésped, puedes usar:
+hotel.registrar_salida(cedula)
+# Para consultar información de un huésped por cédula, puedes usar:
+hotel.consultar_huesped_por_cedula(cedula)
+# Para consultar la lista de habitaciones disponibles, puedes usar:
+hotel.consultar_habitaciones_disponibles()
+# Para consultar la lista de habitaciones ocupadas, puedes usar 
+hotel.consultar_habitaciones_ocupadas()"""
